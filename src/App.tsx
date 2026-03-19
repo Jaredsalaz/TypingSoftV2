@@ -14,7 +14,7 @@ import { TechnologiesModal } from '@components/TechnologiesModal'
 import { CountriesModal } from '@components/CountriesModal'
 import { OrgChartModal } from '@components/OrgChartModal'
 import '@styles/globals.css'
-import './app.css'
+import './App.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
