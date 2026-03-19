@@ -1,0 +1,227 @@
+/* ===== ORGANIZATIONAL CHART MODAL ===== */
+.org-chart-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+
+.org-chart-modal {
+  background: linear-gradient(135deg, #000a2e 0%, #0a1a3a 100%);
+  border: 2px solid var(--secondary-cyan);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 1100px;
+  width: 95%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 0 60px rgba(42, 208, 208, 0.4), inset 0 0 40px rgba(42, 208, 208, 0.1);
+}
+
+.org-chart-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.org-chart-header h2 {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  color: var(--secondary-cyan);
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(42, 208, 208, 0.5);
+}
+
+.org-chart-header p {
+  color: #999;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.org-chart-close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: var(--secondary-cyan);
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.org-chart-close:hover {
+  transform: rotate(90deg) scale(1.1);
+}
+
+.org-chart-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+/* CEO Section */
+.ceo-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.ceo-card {
+  background: linear-gradient(135deg, rgba(42, 208, 208, 0.2) 0%, rgba(0, 0, 161, 0.2) 100%);
+  border: 2px solid var(--secondary-cyan);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  max-width: 300px;
+  transition: all 0.3s ease;
+}
+
+.ceo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(42, 208, 208, 0.4);
+}
+
+.card-avatar {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.ceo-card h3 {
+  font-family: var(--font-primary);
+  color: var(--secondary-cyan);
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  text-shadow: 0 0 10px rgba(42, 208, 208, 0.3);
+}
+
+.card-position {
+  color: var(--secondary-cyan);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-bio {
+  color: #aaa;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Directors Section */
+.directors-section,
+.specialists-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-label {
+  font-family: var(--font-primary);
+  color: var(--secondary-cyan);
+  font-size: 0.95rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(42, 208, 208, 0.3);
+}
+
+.directors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.director-card,
+.specialist-card {
+  background: rgba(42, 208, 208, 0.08);
+  border: 1px solid rgba(42, 208, 208, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.director-card:hover,
+.specialist-card:hover {
+  border-color: var(--secondary-cyan);
+  background: rgba(42, 208, 208, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(42, 208, 208, 0.2);
+}
+
+.director-card h4,
+.specialist-card h4 {
+  font-family: var(--font-primary);
+  color: var(--secondary-cyan);
+  font-size: 1.1rem;
+  margin: 10px 0 5px 0;
+}
+
+.director-card .card-position,
+.specialist-card .card-position {
+  color: var(--secondary-cyan);
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.director-card .card-bio,
+.specialist-card .card-bio {
+  color: #aaa;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.card-specialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+.card-specialties span {
+  background: rgba(0, 0, 161, 0.3);
+  color: var(--secondary-cyan);
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(0, 0, 161, 0.5);
+}
+
+.specialists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.org-chart-footer {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 2px solid rgba(42, 208, 208, 0.2);
+  color: #999;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .directors-grid,
+  .specialists-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .org-chart-modal {
+    padding: 20px;
+  }
+}
